@@ -1,6 +1,6 @@
 FROM ubuntu:focal
 
-MAINTAINER changh95
+MAINTAINER bert13069598
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && apt-get upgrade -y
@@ -39,6 +39,6 @@ RUN pip3 install gitpython
 RUN apt-get autoclean
 
 RUN mkdir slam && cd slam && \
-    git clone https://github.com/changh95/programmers_slam_project_template.git &&\
-    cd programmers_slam_project_template && ./buildDeps.py --d --system
+    git clone https://github.com/bert13069598/slam_template.git &&\
+    cd slam_template && ./buildDeps.py --d --system
 
