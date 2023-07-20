@@ -1,4 +1,4 @@
-name: Build Base docker image 
+name: Build Base docker image
 on:
   # schedule:
   #   # ┌─────── min (0 - 59)
@@ -23,7 +23,7 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
 
-      - name: pre-build 3rdParty libs 
+      - name: pre-build 3rdParty libs
         run: |
           echo "=== Build start ==="
           echo 1234 | sudo -S echo ""         
@@ -54,4 +54,4 @@ jobs:
           echo "=== Log Docker image status ==="
           sudo docker images
           echo "=== Clean up finished ==="
-        if: failure() 
+        if: failure()
