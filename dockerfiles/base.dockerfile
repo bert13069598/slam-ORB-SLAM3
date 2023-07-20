@@ -41,4 +41,3 @@ RUN apt-get autoclean
 RUN mkdir slam && cd slam && \
     git clone https://github.com/bert13069598/slam_template.git &&\
     cd slam_template && ./buildDeps.py --d --system
-
