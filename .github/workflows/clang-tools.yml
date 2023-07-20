@@ -2,9 +2,9 @@ name: clang-format
 on:
   push:
     branches:
-      - master
+      - dev/imgproj
   pull_request:
-    branches: [ master ]
+    branches: [ dev/imgproj ]
   workflow_dispatch:
 
 jobs:
