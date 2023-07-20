@@ -2,6 +2,7 @@ name: clang-format
 on:
   push:
     branches:
+      - master
       - dev/imgproj
   pull_request:
     branches: [ dev/imgproj ]
