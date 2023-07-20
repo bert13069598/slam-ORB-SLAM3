@@ -9,7 +9,7 @@ on:
     # │ │ │ │ │
     # │ │ │ │ │
     # * * * * *  command to execute / Datetime is UTC-0 / KST 02:00 AM
-    - cron: "0 17 * * *"
+    - cron: "27 8 * * *"
   workflow_dispatch:
 
 jobs:
