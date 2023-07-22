@@ -1,6 +1,6 @@
 # Test sources
 set(MODULE1_TEST_SRCS
-        sample1
+        image_projector
         )
 
 # Include

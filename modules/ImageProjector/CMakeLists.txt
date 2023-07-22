@@ -26,7 +26,7 @@ add_definitions(-DMODULE1_RESOURCES_DIR="${MODULE1_RESOURCES_PATH}")
 
 # Source files
 set(MODULE1_SOURCE_FILES
-        src/Class.cpp
+        src/image_projector.cpp
         )
 add_library(${PACKAGE_NAME}
         ${MODULE1_SOURCE_FILES}
