@@ -1,19 +1,19 @@
 name: Build Base docker image
 on:
-  # schedule:
-  #   # ┌─────── min (0 - 59)
-  #   # │ ┌──────── hour (0 - 23)
-  #   # │ │ ┌───────── day of month (1 - 31)
-  #   # │ │ │ ┌────────── month (1 - 12)
-  #   # │ │ │ │ ┌─────────── day of week (0 - 6)
-  #   # │ │ │ │ │
-  #   # │ │ │ │ │
-  #   # * * * * *  command to execute / Datetime is UTC-0 / KST 02:00 AM
-  #   - cron: "0 17 * * *"
-  push:
-    branches:
-      - dev/imgproj
-  workflow_dispatch:
+   schedule:
+     # ┌─────── min (0 - 59)
+     # │ ┌──────── hour (0 - 23)
+     # │ │ ┌───────── day of month (1 - 31)
+     # │ │ │ ┌────────── month (1 - 12)
+     # │ │ │ │ ┌─────────── day of week (0 - 6)
+     # │ │ │ │ │
+     # │ │ │ │ │
+     # * * * * *  command to execute / Datetime is UTC-0 / KST 02:00 AM
+     - cron: "0 17 * * *"
+   workflow_dispatch:
+#  push:
+#    branches:
+#      - dev/imgproj
 
 jobs:
   Dependency_Build:
