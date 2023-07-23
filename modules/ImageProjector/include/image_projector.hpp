@@ -29,17 +29,20 @@ struct ExtrinsicMatrix {
     Eigen::Vector3d translation;
 };
 
-class ImageProjector {
-public:
-    ImageProjector(const Landmark3DPosition &point3D,
-                   const IntrinsicMatrix &intrinsicMatrix,
-                   const ExtrinsicMatrix &extrinsicMatrix){
-        std::ignore = point3D;
-        std::ignore = intrinsicMatrix;
-        std::ignore = extrinsicMatrix;
-    };
-
-private:
+struct ProjectedPoints
+{
+    double u;
+    double v;
 };
+
+ProjectedPoints project_points(const Landmark3DPosition& point3D,
+                               const IntrinsicMatrix& intrinsics,
+                               const ExtrinsicMatrix& extrinsics){
+    std::ignore=point3D;
+    std::ignore=intrinsics;
+    std::ignore=extrinsics;
+
+    return ProjectedPoints{};
+}
 
 #endif  // SVSLAM_CLASS_HPP
