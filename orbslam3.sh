@@ -4,7 +4,8 @@
 ## thirdparty
 #cp ORB_SLAM3/Thirdparty/* thirdparty/ -r
 
-echo "Configuring and building Thirdparty/DBoW2 ..."
+echo "Configuring and building thirdparty/DBoW2 ..."
+sudo apt install libboost-dev -y
 cd thirdparty/DBoW2
 mkdir build
 cd build
@@ -13,7 +14,7 @@ make -j30
 
 cd ../../g2o
 
-echo "Configuring and building Thirdparty/g2o ..."
+echo "Configuring and building thirdparty/g2o ..."
 
 mkdir build
 cd build
@@ -22,7 +23,7 @@ make -j30
 
 cd ../../Sophus
 
-echo "Configuring and building Thirdparty/Sophus ..."
+echo "Configuring and building thirdparty/Sophus ..."
 
 mkdir build
 cd build

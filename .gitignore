@@ -16,6 +16,10 @@ thirdparty/DBoW2
 thirdparty/g2o
 thirdparty/Sophus
 
+!thirdparty/DBoW2/CMakeLists.txt
+!thirdparty/g2o/CMakeLists.txt
+!thirdparty/Sophus/CMakeLists.txt
+
 test_profile.prof
 
 ORB_SLAM3
