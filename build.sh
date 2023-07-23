@@ -4,8 +4,10 @@
 ## thirdparty
 #cp ORB_SLAM3/Thirdparty/* thirdparty/ -r
 
-echo "Configuring and building thirdparty/DBoW2 ..."
 sudo apt install libboost-dev -y
+sudo apt install openssl libssl-dev -y
+
+echo "Configuring and building thirdparty/DBoW2 ..."
 cd thirdparty/DBoW2
 mkdir build
 cd build
