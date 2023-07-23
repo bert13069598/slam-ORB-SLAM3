@@ -12,5 +12,11 @@ thirdparty/imgui
 thirdparty/opencv
 thirdparty/pangolin
 thirdparty/spdlog
+thirdparty/DBoW2
+thirdparty/g2o
+thirdparty/Sophus
 
 test_profile.prof
+
+ORB_SLAM3
+
