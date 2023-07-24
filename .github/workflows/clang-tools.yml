@@ -2,7 +2,7 @@ name: clang-format
 on:
   push:
     branches:
-      - master
+      - dev/orbslam3
   pull_request:
     branches: [ master ]
   workflow_dispatch:
