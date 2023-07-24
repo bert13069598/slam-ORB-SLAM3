@@ -20,6 +20,21 @@ thirdparty/Sophus
 !thirdparty/g2o/CMakeLists.txt
 !thirdparty/Sophus/CMakeLists.txt
 
+Vocabulary/ORBvoc.txt
+
+examples/Monocular/mono_realsense_D435i
+examples/Monocular/mono_euroc
+examples/Monocular/mono_kitti
+examples/Monocular/mono_tum
+examples/Monocular/mono_tum_vi
+examples/Monocular/mono_realsense_t265
+
+build/
+lib/
+
+CameraTrajectory.txt
+KeyFrameTrajectory.txt
+
 test_profile.prof
 
 ORB_SLAM3
