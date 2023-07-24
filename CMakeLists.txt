@@ -174,7 +174,7 @@ target_link_libraries(example1 PRIVATE
         )
 
 #Monocular examples
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Monocular)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/examples/Monocular)
 
 add_executable(mono_tum
         examples/Monocular/mono_tum.cc)

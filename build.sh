@@ -4,7 +4,7 @@
 ## thirdparty
 #cp ORB_SLAM3/Thirdparty/* thirdparty/ -r
 
-sudo apt install libboost-dev -y
+sudo apt install libboost-dev libboost-serialization-dev -y
 sudo apt install openssl libssl-dev -y
 
 echo "Configuring and building thirdparty/DBoW2 ..."
@@ -35,7 +35,7 @@ make -j30
 cd ../../../
 
 #echo "Uncompress vocabulary ..."
-#
+#mkdir Vocabulary && cp ORB_SLAM3/Vocabulary/* Vocabulary
 #cd Vocabulary
 #tar -xf ORBvoc.txt.tar.gz
 #cd ..
