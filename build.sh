@@ -7,6 +7,12 @@
 sudo apt install libboost-dev libboost-serialization-dev -y
 sudo apt install openssl libssl-dev -y
 
+echo "Clear build file ..."
+rm -rf thirdparty/DBoW2/build
+rm -rf thirdparty/g2o/build
+rm -rf thirdparty/Sophus/build
+rm -rf build
+
 echo "Configuring and building thirdparty/DBoW2 ..."
 cd thirdparty/DBoW2
 mkdir build
@@ -35,7 +41,6 @@ make -j30
 cd ../../../
 
 #echo "Uncompress vocabulary ..."
-#mkdir Vocabulary && cp ORB_SLAM3/Vocabulary/* Vocabulary
 #cd Vocabulary
 #tar -xf ORBvoc.txt.tar.gz
 #cd ..
