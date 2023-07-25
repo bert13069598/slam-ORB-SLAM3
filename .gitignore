@@ -3,19 +3,9 @@
 cmake-build-debug/
 cmake-build-release/
 
-thirdparty/cereal
-thirdparty/ceres
-thirdparty/easy_profiler
-thirdparty/eigen
-thirdparty/gtest
-thirdparty/imgui
-thirdparty/opencv
-thirdparty/pangolin
-thirdparty/spdlog
-thirdparty/DBoW2
-thirdparty/g2o
-thirdparty/Sophus
-
+# thirdparty
+thirdparty/*
+!thirdparty/packages.yaml
 !thirdparty/DBoW2/CMakeLists.txt
 !thirdparty/g2o/CMakeLists.txt
 !thirdparty/Sophus/CMakeLists.txt
