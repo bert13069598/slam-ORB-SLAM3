@@ -24,9 +24,9 @@
 #define SYSTEM_H
 
 
+#include <unistd.h>
 #include <cstdio>
 #include <cstdlib>
-#include <unistd.h>
 #include <opencv2/core/core.hpp>
 #include <string>
 #include <thread>
