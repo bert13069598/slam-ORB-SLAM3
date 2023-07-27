@@ -43,6 +43,7 @@
 #include "Tracking.h"
 #include "Viewer.h"
 
+#define COMPILEDWITHC11
 
 namespace ORB_SLAM3
 {

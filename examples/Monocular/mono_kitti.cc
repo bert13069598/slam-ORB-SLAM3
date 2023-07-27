@@ -25,9 +25,6 @@
 #include<opencv2/core/core.hpp>
 
 #include"System.h"
-
-#define COMPILEDWITHC11
-
 #include "module1/Class.hpp"
 
 using namespace std;

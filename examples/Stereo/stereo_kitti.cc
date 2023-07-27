@@ -26,8 +26,6 @@
 
 #include<System.h>
 
-#define COMPILEDWITHC11
-
 using namespace std;
 
 void LoadImages(const string &strPathToSequence, vector<string> &vstrImageLeft,
