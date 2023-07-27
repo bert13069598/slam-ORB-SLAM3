@@ -201,3 +201,28 @@ if(realsense2_FOUND)
             examples/Monocular/mono_realsense_D435i.cc)
     target_link_libraries(mono_realsense_D435i ${PROJECT_NAME})
 endif()
+
+#Stereo examples
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/examples/Stereo)
+
+add_executable(stereo_kitti
+        examples/Stereo/stereo_kitti.cc)
+target_link_libraries(stereo_kitti ${PROJECT_NAME})
+
+add_executable(stereo_euroc
+        examples/Stereo/stereo_euroc.cc)
+target_link_libraries(stereo_euroc ${PROJECT_NAME})
+
+add_executable(stereo_tum_vi
+        examples/Stereo/stereo_tum_vi.cc)
+target_link_libraries(stereo_tum_vi ${PROJECT_NAME})
+
+if(realsense2_FOUND)
+    add_executable(stereo_realsense_t265
+            examples/Stereo/stereo_realsense_t265.cc)
+    target_link_libraries(stereo_realsense_t265 ${PROJECT_NAME})
+
+    add_executable(stereo_realsense_D435i
+            examples/Stereo/stereo_realsense_D435i.cc)
+    target_link_libraries(stereo_realsense_D435i ${PROJECT_NAME})
+endif()
