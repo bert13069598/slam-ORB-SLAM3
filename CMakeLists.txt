@@ -182,7 +182,9 @@ target_link_libraries(mono_tum ${PROJECT_NAME})
 
 add_executable(mono_kitti
         examples/Monocular/mono_kitti.cc)
-target_link_libraries(mono_kitti ${PROJECT_NAME})
+target_include_directories(mono_kitti PRIVATE
+        ${MODULE1_INCLUDE_PATH})
+target_link_libraries(mono_kitti ${PROJECT_NAME} module1)
 
 add_executable(mono_euroc
         examples/Monocular/mono_euroc.cc)

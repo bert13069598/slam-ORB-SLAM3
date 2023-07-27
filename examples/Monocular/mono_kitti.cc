@@ -25,7 +25,10 @@
 #include<opencv2/core/core.hpp>
 
 #include"System.h"
+
 #define COMPILEDWITHC11
+
+#include "module1/Class.hpp"
 
 using namespace std;
 
@@ -34,6 +37,7 @@ void LoadImages(const string &strSequence, vector<string> &vstrImageFilenames,
 
 int main(int argc, char **argv)
 {
+    EASY_PROFILER_ENABLE;
     if(argc != 4)
     {
         cerr << endl << "Usage: ./mono_kitti path_to_vocabulary path_to_settings path_to_sequence" << endl;
@@ -64,6 +68,7 @@ int main(int argc, char **argv)
     double t_track = 0.f;
 
     cv::Mat im;
+    EASY_BLOCK("Outer block", profiler::colors::Black);
     for(int ni=0; ni<nImages; ni++)
     {
         // Read image from file
@@ -99,6 +104,7 @@ int main(int argc, char **argv)
 #endif
         }
 
+        EASY_BLOCK("Track", profiler::colors::Blue);
 #ifdef COMPILEDWITHC11
         std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
 #else
@@ -108,6 +114,7 @@ int main(int argc, char **argv)
         // Pass the image to the SLAM system
         SLAM.TrackMonocular(im,tframe,vector<ORB_SLAM3::IMU::Point>(), vstrImageFilenames[ni]);
 
+        EASY_END_BLOCK
 #ifdef COMPILEDWITHC11
         std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
 #else
@@ -133,7 +140,7 @@ int main(int argc, char **argv)
         if(ttrack<T)
             usleep((T-ttrack)*1e6);
     }
-
+    EASY_END_BLOCK
     // Stop all threads
     SLAM.Shutdown();
 
@@ -148,6 +155,8 @@ int main(int argc, char **argv)
     cout << "median tracking time: " << vTimesTrack[nImages/2] << endl;
     cout << "mean tracking time: " << totaltime/nImages << endl;
 
+    // Save easy_profiler
+    profiler::dumpBlocksToFile("./mono_kitti.prof");
     // Save camera trajectory
     SLAM.SaveKeyFrameTrajectoryTUM("KeyFrameTrajectory.txt");    
 
