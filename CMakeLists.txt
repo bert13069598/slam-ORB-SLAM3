@@ -147,7 +147,11 @@ target_link_libraries(${PROJECT_NAME}
         ${PROJECT_SOURCE_DIR}/thirdparty/g2o/lib/libg2o.so
         -lboost_serialization
         -lcrypto
+        module1
         )
+include_directories(${PROJECT_NAME}
+        ${MODULE1_INCLUDE_PATH}
+            )
 
 # If RealSense SDK is found the library is added and its examples compiled
 if(realsense2_FOUND)
@@ -182,9 +186,7 @@ target_link_libraries(mono_tum ${PROJECT_NAME})
 
 add_executable(mono_kitti
         examples/Monocular/mono_kitti.cc)
-target_include_directories(mono_kitti PRIVATE
-        ${MODULE1_INCLUDE_PATH})
-target_link_libraries(mono_kitti ${PROJECT_NAME} module1)
+target_link_libraries(mono_kitti ${PROJECT_NAME})
 
 add_executable(mono_euroc
         examples/Monocular/mono_euroc.cc)

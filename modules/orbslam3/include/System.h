@@ -42,6 +42,7 @@
 #include "Settings.h"
 #include "Tracking.h"
 #include "Viewer.h"
+#include "module1/Class.hpp"
 
 #define COMPILEDWITHC11
 
