@@ -19,6 +19,12 @@ examples/Monocular/mono_tum
 examples/Monocular/mono_tum_vi
 examples/Monocular/mono_realsense_t265
 
+examples/Stereo/stereo_euroc
+examples/Stereo/stereo_kitti
+examples/Stereo/stereo_tum_vi
+examples/Stereo/stereo_realsense_t265
+examples/Stereo/stereo_realsense_D435i
+
 build/
 lib/
 
