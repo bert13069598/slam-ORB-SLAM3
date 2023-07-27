@@ -27,6 +27,8 @@
 
 #include<System.h>
 
+#define COMPILEDWITHC11
+
 using namespace std;
 
 void LoadImages(const string &strPathLeft, const string &strPathRight, const string &strPathTimes,
@@ -154,7 +156,7 @@ int main(int argc, char **argv)
     #ifdef COMPILEDWITHC11
             std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
     #else
-            std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
+            std::chrono::monotonic_clock::time_point t1 = std::chrono::monotonic_clock::now();
     #endif
 
             // Pass the image to the SLAM system
@@ -163,7 +165,7 @@ int main(int argc, char **argv)
     #ifdef COMPILEDWITHC11
             std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
     #else
-            std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
+            std::chrono::monotonic_clock::time_point t2 = std::chrono::monotonic_clock::now();
     #endif
 
 #ifdef REGISTER_TIMES
