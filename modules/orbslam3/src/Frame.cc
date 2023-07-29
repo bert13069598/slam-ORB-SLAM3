@@ -469,11 +469,13 @@ Frame::Frame(
   mvInvLevelSigma2 = mpORBextractorLeft->GetInverseScaleSigmaSquares();
 
   // ORB extraction
+EASY_BLOCK("ExtractORB", profiler::colors::Purple);
 #ifdef REGISTER_TIMES
   std::chrono::steady_clock::time_point time_StartExtORB =
     std::chrono::steady_clock::now();
 #endif
   ExtractORB(0, imGray, 0, 1000);
+EASY_END_BLOCK
 #ifdef REGISTER_TIMES
   std::chrono::steady_clock::time_point time_EndExtORB =
     std::chrono::steady_clock::now();
