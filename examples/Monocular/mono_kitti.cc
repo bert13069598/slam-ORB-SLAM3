@@ -60,11 +60,11 @@ int main(int argc, char **argv)
     cout << "Images in the sequence: " << nImages << endl << endl;
 
     // Main loop
+EASY_MAIN_THREAD;
     double t_resize = 0.f;
     double t_track = 0.f;
 
     cv::Mat im;
-    EASY_BLOCK("Outer block", profiler::colors::Black);
     for(int ni=0; ni<nImages; ni++)
     {
         // Read image from file
@@ -100,7 +100,7 @@ int main(int argc, char **argv)
 #endif
         }
 
-        EASY_BLOCK("Track", profiler::colors::Blue);
+EASY_BLOCK("Track", profiler::colors::Blue);
 #ifdef COMPILEDWITHC11
         std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
 #else
@@ -110,7 +110,7 @@ int main(int argc, char **argv)
         // Pass the image to the SLAM system
         SLAM.TrackMonocular(im,tframe,vector<ORB_SLAM3::IMU::Point>(), vstrImageFilenames[ni]);
 
-        EASY_END_BLOCK
+EASY_END_BLOCK
 #ifdef COMPILEDWITHC11
         std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
 #else
@@ -136,7 +136,7 @@ int main(int argc, char **argv)
         if(ttrack<T)
             usleep((T-ttrack)*1e6);
     }
-    EASY_END_BLOCK
+EASY_END_BLOCK
     // Stop all threads
     SLAM.Shutdown();
 
