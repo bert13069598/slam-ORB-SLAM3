@@ -319,6 +319,7 @@ void LoopClosing::Run()
           if (bGoodLoop)
           {
             mvpLoopMapPoints = mvpLoopMPs;
+            spdlog::info("LoopClosing!");
 
 #ifdef REGISTER_TIMES
             std::chrono::steady_clock::time_point time_StartLoop =
