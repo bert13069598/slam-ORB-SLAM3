@@ -97,6 +97,7 @@ void LocalMapping::Run()
     // Check if there are keyframes in the queue
     if (CheckNewKeyFrames() && !mbBadImu)
     {
+EASY_BLOCK("LocalMap", profiler::colors::Magenta);
 #ifdef REGISTER_TIMES
       double timeLBA_ms = 0;
       double timeKFCulling_ms = 0;
@@ -325,6 +326,7 @@ void LocalMapping::Run()
 
       mpLoopCloser->InsertKeyFrame(mpCurrentKeyFrame);
 
+EASY_END_BLOCK
 #ifdef REGISTER_TIMES
       std::chrono::steady_clock::time_point time_EndLocalMap =
         std::chrono::steady_clock::now();
