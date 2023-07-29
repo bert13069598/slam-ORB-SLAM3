@@ -1949,6 +1949,7 @@ void LoopClosing::MergeLocal()
 
   // std::cout << "[Merge]: Start welding bundle adjustment" << std::endl;
 
+EASY_BLOCK("LBA", profiler::colors::LightGreen100);
 #ifdef REGISTER_TIMES
   std::chrono::steady_clock::time_point time_StartWeldingBA =
     std::chrono::steady_clock::now();
@@ -1984,7 +1985,7 @@ void LoopClosing::MergeLocal()
     Optimizer::LocalBundleAdjustment(
       mpCurrentKF, vpLocalCurrentWindowKFs, vpMergeConnectedKFs, &bStop);
   }
-
+EASY_END_BLOCK
 #ifdef REGISTER_TIMES
   std::chrono::steady_clock::time_point time_EndWeldingBA =
     std::chrono::steady_clock::now();
