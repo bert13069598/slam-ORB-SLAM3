@@ -127,6 +127,7 @@ EASY_END_BLOCK
         vTimesTrack[ni]=ttrack;
 
         // Wait to load the next frame
+EASY_BLOCK("Wait", profiler::colors::Grey);
         double T=0;
         if(ni<nImages-1)
             T = vTimestamps[ni+1]-tframe;
@@ -135,6 +136,7 @@ EASY_END_BLOCK
 
         if(ttrack<T)
             usleep((T-ttrack)*1e6);
+EASY_END_BLOCK
     }
 EASY_END_BLOCK
     // Stop all threads
