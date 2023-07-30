@@ -1200,6 +1200,7 @@ int LoopClosing::FindMatchesByProjection(
 
 void LoopClosing::CorrectLoop()
 {
+EASY_BLOCK("LoopClosing", profiler::colors::PaleGold);
   // cout << "Loop detected!" << endl;
 
   // Send a stop signal to Local Mapping
@@ -1509,6 +1510,7 @@ void LoopClosing::CorrectLoop()
 
   mLastLoopKFid =
     mpCurrentKF->mnId;  // TODO old varible, it is not use in the new algorithm
+EASY_END_BLOCK;
 }
 
 void LoopClosing::MergeLocal()
@@ -1949,7 +1951,6 @@ void LoopClosing::MergeLocal()
 
   // std::cout << "[Merge]: Start welding bundle adjustment" << std::endl;
 
-EASY_BLOCK("LBA", profiler::colors::LightGreen100);
 #ifdef REGISTER_TIMES
   std::chrono::steady_clock::time_point time_StartWeldingBA =
     std::chrono::steady_clock::now();
@@ -1985,7 +1986,7 @@ EASY_BLOCK("LBA", profiler::colors::LightGreen100);
     Optimizer::LocalBundleAdjustment(
       mpCurrentKF, vpLocalCurrentWindowKFs, vpMergeConnectedKFs, &bStop);
   }
-EASY_END_BLOCK
+
 #ifdef REGISTER_TIMES
   std::chrono::steady_clock::time_point time_EndWeldingBA =
     std::chrono::steady_clock::now();
