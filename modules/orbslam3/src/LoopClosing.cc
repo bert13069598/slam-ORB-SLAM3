@@ -2716,7 +2716,7 @@ void LoopClosing::RunGlobalBundleAdjustment(
 {
   Verbose::PrintMess(
     "Starting Global Bundle Adjustment", Verbose::VERBOSITY_NORMAL);
-EASY_BLOCK("GBA", profiler::colors::Green);
+EASY_BLOCK("BundleAdjustment", profiler::colors::Green);
 #ifdef REGISTER_TIMES
   std::chrono::steady_clock::time_point time_StartFGBA =
     std::chrono::steady_clock::now();
