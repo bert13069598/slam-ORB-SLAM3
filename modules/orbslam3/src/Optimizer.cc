@@ -1246,6 +1246,7 @@ void Optimizer::LocalBundleAdjustment(
   int& num_MPs,
   int& num_edges)
 {
+EASY_BLOCK("LocalBundleAdjustment", profiler::colors::Green);
   // Local KeyFrames: First Breath Search from Current Keyframe
   list<KeyFrame*> lLocalKeyFrames;
 
@@ -1691,6 +1692,7 @@ void Optimizer::LocalBundleAdjustment(
   }
 
   pMap->IncreaseChangeIndex();
+EASY_END_BLOCK
 }
 
 
