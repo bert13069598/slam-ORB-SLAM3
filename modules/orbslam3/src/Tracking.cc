@@ -2258,7 +2258,7 @@ void Tracking::Track()
   {
     // System is initialized. Track Frame.
     bool bOK;
-
+EASY_BLOCK("PoseEstimation", profiler::colors::Purple);
 #ifdef REGISTER_TIMES
     std::chrono::steady_clock::time_point time_StartPosePred =
       std::chrono::steady_clock::now();
@@ -2455,7 +2455,7 @@ void Tracking::Track()
 
     if (!mCurrentFrame.mpReferenceKF)
       mCurrentFrame.mpReferenceKF = mpReferenceKF;
-
+EASY_END_BLOCK
 #ifdef REGISTER_TIMES
     std::chrono::steady_clock::time_point time_EndPosePred =
       std::chrono::steady_clock::now();
@@ -2467,7 +2467,7 @@ void Tracking::Track()
     vdPosePred_ms.push_back(timePosePred);
 #endif
 
-
+EASY_BLOCK("TrackLocalMap", profiler::colors::DeepPurple100);
 #ifdef REGISTER_TIMES
     std::chrono::steady_clock::time_point time_StartLMTrack =
       std::chrono::steady_clock::now();
@@ -2556,7 +2556,7 @@ void Tracking::Track()
           mLastBias = mCurrentFrame.mImuBias;
       }
     }
-
+EASY_END_BLOCK
 #ifdef REGISTER_TIMES
     std::chrono::steady_clock::time_point time_EndLMTrack =
       std::chrono::steady_clock::now();
