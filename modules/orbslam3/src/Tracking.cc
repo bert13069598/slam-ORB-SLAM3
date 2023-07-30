@@ -2258,7 +2258,7 @@ void Tracking::Track()
   {
     // System is initialized. Track Frame.
     bool bOK;
-EASY_BLOCK("PoseEstimation", profiler::colors::Purple);
+EASY_BLOCK("PoseEstimation", profiler::colors::DeepPurple100);
 #ifdef REGISTER_TIMES
     std::chrono::steady_clock::time_point time_StartPosePred =
       std::chrono::steady_clock::now();
