@@ -55,7 +55,7 @@ include(cmake_files/find_opencv)
 #include(cmake_files/find_gtest)
 include(cmake_files/find_easy_profiler)
 #include(cmake_files/find_doxygen)
-#include(cmake_files/find_spdlog)
+include(cmake_files/find_spdlog)
 
 include_directories("modules")
 include_directories("DBoW2")

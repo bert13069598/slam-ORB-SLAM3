@@ -144,8 +144,8 @@ def install_cpp_packages():
 def install_build_packages(enable_debug):
     # if cfg.cereal != "":
     #     install_cereal(cfg.cereal, enable_debug)
-    # if cfg.spdlog != "":
-    #     install_spdlog(cfg.spdlog, enable_debug)
+    if cfg.spdlog != "":
+        install_spdlog(cfg.spdlog, enable_debug)
     # if cfg.pangolin != "":
     #     install_pangolin(cfg.pangolin, enable_debug)
     # if cfg.eigen != "":
