@@ -45,19 +45,21 @@ endif ()
 list(APPEND CMAKE_PREFIX_PATH /usr)
 
 # Load libraries
-include(cmake_files/find_eigen3)
-include(cmake_files/find_image_exts) # ${IMAGE_LIBS} - png, jpeg, tiff, zlib
+#include(cmake_files/find_eigen3)
+#include(cmake_files/find_image_exts) # ${IMAGE_LIBS} - png, jpeg, tiff, zlib
 include(cmake_files/find_yaml_cpp)
 include(cmake_files/find_opencv)
-include(cmake_files/find_ceres)
-include(cmake_files/find_gl) # ${GL_LIBS} - OpenGL, GLUT, GLEW
-include(cmake_files/find_pangolin)
-include(cmake_files/find_gtest)
+#include(cmake_files/find_ceres)
+#include(cmake_files/find_gl) # ${GL_LIBS} - OpenGL, GLUT, GLEW
+#include(cmake_files/find_pangolin)
+#include(cmake_files/find_gtest)
 include(cmake_files/find_easy_profiler)
-include(cmake_files/find_doxygen)
-include(cmake_files/find_spdlog)
+#include(cmake_files/find_doxygen)
+#include(cmake_files/find_spdlog)
 
 include_directories("modules")
+include_directories("DBoW2")
+include_directories("fbow")
 
 #----------------------------------------
 # Build internal libraries
@@ -68,6 +70,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_subdirectory(modules/module1)
+add_subdirectory(modules/DBoW2)
+add_subdirectory(modules/fbow)
 
 #----------------------------------------
 # Executables
@@ -82,3 +86,22 @@ target_include_directories(example1 PRIVATE
 target_link_libraries(example1 PRIVATE
         module1
         )
+
+add_executable(exec_dbow2 examples/LoopClosure/dbow2.cpp)
+target_include_directories(exec_dbow2 PRIVATE
+        ${MODULE1_INCLUDE_PATH}
+)
+target_link_libraries(exec_dbow2 PRIVATE
+        module1
+        DBoW2
+)
+
+add_executable(exec_fbow examples/LoopClosure/fbow.cpp)
+target_include_directories(exec_fbow PRIVATE
+        ${MODULE1_INCLUDE_PATH}
+)
+target_link_libraries(exec_fbow PRIVATE
+        module1
+        DBoW2
+        fbow/tests
+)
