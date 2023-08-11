@@ -2,7 +2,7 @@ name: clang-format
 on:
   push:
     branches:
-      - master
+      - dev/orbslam2
   pull_request:
     branches: [ master ]
   workflow_dispatch:
@@ -10,8 +10,8 @@ on:
 jobs:
   clang-format:
     name: clang-format
-    # runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+#    runs-on: self-hosted
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
