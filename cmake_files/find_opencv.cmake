@@ -6,7 +6,7 @@ if (CMAKE_BUILD_TYPE MATCHES "Debug")
 endif (CMAKE_BUILD_TYPE MATCHES "Debug")
 
 if (CMAKE_BUILD_TYPE MATCHES "Release")
-  find_package(OpenCV REQUIRED HINTS ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/opencv/install/Release/lib/cmake/opencv4)
+  find_package(OpenCV REQUIRED HINTS ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/opencv/install/Release/share/OpenCV)
 endif (CMAKE_BUILD_TYPE MATCHES "Release")
 
 if (OpenCV_FOUND)
