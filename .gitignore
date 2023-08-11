@@ -21,7 +21,8 @@ thirdparty/g2o/lib/
 test_profile.prof
 
 ORB_SLAM2
-
+build
+lib
 examples/Monocular/mono_euroc
 examples/Monocular/mono_kitti
 examples/Monocular/mono_tum
