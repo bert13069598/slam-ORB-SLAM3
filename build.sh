@@ -4,7 +4,7 @@ cd thirdparty/DBoW2 \
 &&mkdir build \
 &&cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release \
--DOpenCV_DIR=/home/bert/CLionProjects/orbslam2/thirdparty/opencv/install/Release/lib/cmake/opencv4
+-DOpenCV_DIR=/home/bert/CLionProjects/orbslam2/thirdparty/opencv/install/Release/share/OpenCV
 make -j30
 
 cd ../../g2o
@@ -14,7 +14,7 @@ echo "Configuring and building thirdparty/g2o ..."
 mkdir build \
 &&cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release \
--DEigen3_DIR=/home/bert/CLionProjects/orbslam2/thirdparty/eigen/install/Release/share/eigen3/cmake
+-DEIGEN3_INCLUDE_DIR=/home/bert/CLionProjects/orbslam2/thirdparty/eigen/install/Release/include/eigen3
 make -j30
 
 cd ../../../

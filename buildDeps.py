@@ -154,12 +154,12 @@ def install_build_packages(enable_debug):
         install_opencv(cfg.opencv, enable_debug)
     # if cfg.ceres != "":
     #     install_ceres(cfg.ceres, enable_debug)
-    # if cfg.gtest != "":
-    #     install_gtest(cfg.gtest, enable_debug)
+    if cfg.gtest != "":
+        install_gtest(cfg.gtest, enable_debug)
     if cfg.easy_profiler != "":
         install_easy_profiler(cfg.easy_profiler, enable_debug)
-    # if cfg.imgui != "":
-    #     install_imgui(cfg.imgui, enable_debug)
+    if cfg.imgui != "":
+        install_imgui(cfg.imgui, enable_debug)
 
 
 def install_spdlog(cfg, enable_debug):
