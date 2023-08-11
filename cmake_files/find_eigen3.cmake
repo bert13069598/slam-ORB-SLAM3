@@ -1,5 +1,6 @@
 message(STATUS "Finding Eigen3...")
 
+set(Eigen3_DIR /home/bert/CLionProjects/orbslam2/thirdparty/eigen/install/Release/share/eigen3/cmake)
 if (CMAKE_BUILD_TYPE MATCHES "Debug")
   find_package(Eigen3 REQUIRED HINTS ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/eigen/install/Debug/share/eigen3/cmake)
 endif (CMAKE_BUILD_TYPE MATCHES "Debug")
