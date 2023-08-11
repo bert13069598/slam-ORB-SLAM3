@@ -142,8 +142,8 @@ def install_cpp_packages():
 
 
 def install_build_packages(enable_debug):
-    if cfg.cereal != "":
-        install_cereal(cfg.cereal, enable_debug)
+    # if cfg.cereal != "":
+    #     install_cereal(cfg.cereal, enable_debug)
     if cfg.spdlog != "":
         install_spdlog(cfg.spdlog, enable_debug)
     if cfg.pangolin != "":
@@ -152,14 +152,14 @@ def install_build_packages(enable_debug):
         install_eigen(cfg.eigen, enable_debug)
     if cfg.opencv != "":
         install_opencv(cfg.opencv, enable_debug)
-    if cfg.ceres != "":
-        install_ceres(cfg.ceres, enable_debug)
-    if cfg.gtest != "":
-        install_gtest(cfg.gtest, enable_debug)
+    # if cfg.ceres != "":
+    #     install_ceres(cfg.ceres, enable_debug)
+    # if cfg.gtest != "":
+    #     install_gtest(cfg.gtest, enable_debug)
     if cfg.easy_profiler != "":
         install_easy_profiler(cfg.easy_profiler, enable_debug)
-    if cfg.imgui != "":
-        install_imgui(cfg.imgui, enable_debug)
+    # if cfg.imgui != "":
+    #     install_imgui(cfg.imgui, enable_debug)
 
 
 def install_spdlog(cfg, enable_debug):
