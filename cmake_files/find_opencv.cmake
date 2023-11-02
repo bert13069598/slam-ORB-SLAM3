@@ -1,5 +1,6 @@
 message(STATUS "Finding OpenCV...")
 
+set(OpenCV_DIR ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/opencv/install/Release/lib/cmake/opencv4)
 if (CMAKE_BUILD_TYPE MATCHES "Debug")
   find_package(OpenCV REQUIRED HINTS ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/opencv/install/Debug/lib/cmake/opencv4)
 endif (CMAKE_BUILD_TYPE MATCHES "Debug")
